@@ -59,6 +59,9 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
+        "migrate": [
+            "@php artisan migrate"
+        ],
         "migrate-fresh-seed": [
             "@php artisan migrate:fresh --seed"
         ],
