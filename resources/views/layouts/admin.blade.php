@@ -63,6 +63,7 @@
         <!-- Divider -->
         <hr class="sidebar-divider">
 
+        @can('kelola pengguna')
         <!-- Heading -->
         <div class="sidebar-heading">
             {{ __('Kelola') }}
@@ -75,6 +76,7 @@
                 <span>{{ __('Pengguna') }}</span>
             </a>
         </li>
+        @endcan
 
         <!-- Heading -->
         <div class="sidebar-heading">
