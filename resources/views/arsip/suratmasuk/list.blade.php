@@ -40,13 +40,13 @@
                 @foreach ($data as $li)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $li->kode }}</td>
-                        <td>{{ $li->nomor_surat }}</td>
-                        <td>{{ \Carbon\Carbon::parse($li->tanggal_masuk)->formatLocalized('%d %B %Y') }}</td>
-                        <td>{{ \Carbon\Carbon::parse($li->tanggal_surat)->formatLocalized('%d %B %Y') }}</td>
-                        <td>{{ $li->pengirim }}</td>
-                        <td>{{ $li->kepada }}</td>
-                        <td>{{ $li->perihal }}</td>
+                        <td>{{ $li->kode ?? '<span style="color: brown">Kosong</span>'  }}</td>
+                        <td>{{ $li->nomor_surat ?? 'Kosong'  }}</td>
+                        <td>{{ \Carbon\Carbon::parse($li->tanggal_masuk)->formatLocalized('%d %B %Y') ?? 'Kosong'  }}</td>
+                        <td>{{ \Carbon\Carbon::parse($li->tanggal_surat)->formatLocalized('%d %B %Y') ?? 'Kosong'  }}</td>
+                        <td>{{ $li->pengirim ?? 'Kosong'  }}</td>
+                        <td>{{ $li->kepada ?? 'Kosong'  }}</td>
+                        <td>{{ $li->perihal ?? 'Kosong'  }}</td>
                         <td>
                             @if (isset($li->file))
                                 <div class="text-center">
