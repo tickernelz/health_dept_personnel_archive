@@ -68,12 +68,32 @@
             {{ __('Kelola') }}
         </div>
 
-        <!-- Nav Item -->
+        <!-- Kelola Pengguna -->
         <li class="nav-item {{ Nav::isRoute('pengguna.index') }}">
             <a class="nav-link" href="{{ route('pengguna.index') }}">
                 <i class="fas fa-fw fa-users"></i>
                 <span>{{ __('Pengguna') }}</span>
             </a>
+        </li>
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            {{ __('Arsip') }}
+        </div>
+
+        <!-- Arsip Surat -->
+        <li class="nav-item {{ Nav::isResource('suratmasuk') }}">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#surat"
+               aria-expanded="true" aria-controls="surat">
+                <i class="fas fa-fw fa-mail-bulk"></i>
+                <span>{{ __('Surat') }}</span>
+            </a>
+            <div id="surat" class="collapse" aria-labelledby="headingTwo" data-parent="#surat">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item {{ Nav::isResource('suratmasuk') }}" href="{{ route('suratmasuk.index') }}">{{ __('Masuk') }}</a>
+                    <a class="collapse-item" href="cards.html">{{ __('Keluar') }}</a>
+                </div>
+            </div>
         </li>
 
         <!-- Divider -->
