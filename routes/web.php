@@ -25,9 +25,11 @@ Route::middleware('auth')->group(function () {
     Route::middleware('can:kelola pengguna')->group(function () {
         Route::resource('pengguna', PenggunaController::class);
     });
-    // Kelola Pengguna
+    // Kelola Surat
     Route::middleware('can:kelola surat')->group(function () {
         Route::resource('suratmasuk', SuratmasukController::class);
         Route::get('suratmasuk/file/hapus/{id}', 'SuratmasukController@hapus_file')->name('suratmasuk.hapus_file');
+        Route::resource('suratkeluar', SuratkeluarController::class);
+        Route::get('suratkeluar/file/hapus/{id}', 'SuratkeluarController@hapus_file')->name('suratkeluar.hapus_file');
     });
 });

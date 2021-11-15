@@ -82,7 +82,7 @@
         </div>
 
         <!-- Arsip Surat -->
-        <li class="nav-item {{ Nav::isResource('suratmasuk') }}">
+        <li class="nav-item {{ Nav::isResource('suratmasuk') }} {{ Nav::isResource('suratkeluar') }}">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#surat"
                aria-expanded="true" aria-controls="surat">
                 <i class="fas fa-fw fa-mail-bulk"></i>
@@ -91,7 +91,7 @@
             <div id="surat" class="collapse" aria-labelledby="headingTwo" data-parent="#surat">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item {{ Nav::isResource('suratmasuk') }}" href="{{ route('suratmasuk.index') }}">{{ __('Masuk') }}</a>
-                    <a class="collapse-item" href="cards.html">{{ __('Keluar') }}</a>
+                    <a class="collapse-item {{ Nav::isResource('suratkeluar') }}"  href="{{ route('suratkeluar.index') }}">{{ __('Keluar') }}</a>
                 </div>
             </div>
         </li>
