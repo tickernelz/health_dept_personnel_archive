@@ -128,8 +128,8 @@ class CutitahunanController extends Controller
         if ($request->hasFile('file')) {
             // Hapus Berkas Lama (Jika Ada)
             $namaberkas = $data->file;
-            if (is_file(public_path('file/cuti/tahunan').'/'.$namaberkas)) {
-                unlink(public_path('file/cuti/tahunan').'/'.$namaberkas);
+            if (is_file(public_path('file/cuti/tahunan/').$namaberkas)) {
+                unlink(public_path('file/cuti/tahunan/').$namaberkas);
             }
             // Upload File Baru
             $fileName = time().'_'.$request->file->getClientOriginalName();
@@ -151,7 +151,7 @@ class CutitahunanController extends Controller
         $namaberkas = $data->file;
 
         // Hapus Berkas Lama ()
-        unlink(public_path('file/cuti/tahunan').$namaberkas);
+        unlink(public_path('file/cuti/tahunan/').$namaberkas);
         $data->file = null;
         $data->save();
 
@@ -161,6 +161,8 @@ class CutitahunanController extends Controller
     public function destroy(int $id)
     {
         $data = Cutitahunan::firstWhere('id', $id);
+        // Hapus Berkas Lama
+        unlink(public_path('file/cuti/tahunan/').$data->file);
         $data->delete();
 
         return redirect()->route('cutitahunan.index')->with('message', 'Data Berhasil Dihapus!');

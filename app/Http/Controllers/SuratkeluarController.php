@@ -120,8 +120,8 @@ class SuratkeluarController extends Controller
         if ($request->hasFile('file')) {
             // Hapus Berkas Lama (Jika Ada)
             $namaberkas = $data->file;
-            if (is_file(public_path('file/suratkeluar').'/'.$namaberkas)) {
-                unlink(public_path('file/suratkeluar').'/'.$namaberkas);
+            if (is_file(public_path('file/suratkeluar/').$namaberkas)) {
+                unlink(public_path('file/suratkeluar/').$namaberkas);
             }
             // Upload File Baru
             $fileName = time().'_'.$request->file->getClientOriginalName();
@@ -153,6 +153,8 @@ class SuratkeluarController extends Controller
     public function destroy(int $id)
     {
         $data = Suratkeluar::firstWhere('id', $id);
+        // Hapus Berkas Lama
+        unlink(public_path('file/suratkeluar/').$data->file);
         $data->delete();
 
         return redirect()->route('suratkeluar.index')->with('message', 'Data Berhasil Dihapus!');

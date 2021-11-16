@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Suratmasuk;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 use Validator;
 
 class SuratmasukController extends Controller
@@ -136,8 +135,8 @@ class SuratmasukController extends Controller
         if ($request->hasFile('file')) {
             // Hapus Berkas Lama (Jika Ada)
             $namaberkas = $data->file;
-            if (is_file(public_path('file/suratmasuk').'/'.$namaberkas)) {
-                unlink(public_path('file/suratmasuk').'/'.$namaberkas);
+            if (is_file(public_path('file/suratmasuk/').$namaberkas)) {
+                unlink(public_path('file/suratmasuk/').$namaberkas);
             }
             // Upload File Baru
             $fileName = time().'_'.$request->file->getClientOriginalName();
@@ -169,6 +168,8 @@ class SuratmasukController extends Controller
     public function destroy(int $id)
     {
         $data = Suratmasuk::firstWhere('id', $id);
+        // Hapus Berkas Lama
+        unlink(public_path('file/suratmasuk/').$data->file);
         $data->delete();
 
         return redirect()->route('suratmasuk.index')->with('message', 'Data Berhasil Dihapus!');
