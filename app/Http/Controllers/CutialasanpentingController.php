@@ -161,8 +161,11 @@ class CutialasanpentingController extends Controller
     public function destroy(int $id)
     {
         $data = Cutialasanpenting::firstWhere('id', $id);
-        // Hapus Berkas Lama
-        unlink(public_path('file/cuti/alasanpenting/').$data->file);
+        // Cek apakah ada berkas?
+        if ($data->file !== null) {
+            // Hapus Berkas Lama
+            unlink(public_path('file/cuti/alasanpenting/').$data->file);
+        }
         $data->delete();
 
         return redirect()->route('cutialasanpenting.index')->with('message', 'Data Berhasil Dihapus!');

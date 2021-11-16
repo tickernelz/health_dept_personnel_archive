@@ -161,8 +161,11 @@ class CutitahunanController extends Controller
     public function destroy(int $id)
     {
         $data = Cutitahunan::firstWhere('id', $id);
-        // Hapus Berkas Lama
-        unlink(public_path('file/cuti/tahunan/').$data->file);
+        // Cek apakah ada berkas?
+        if ($data->file !== null) {
+            // Hapus Berkas Lama
+            unlink(public_path('file/cuti/tahunan/').$data->file);
+        }
         $data->delete();
 
         return redirect()->route('cutitahunan.index')->with('message', 'Data Berhasil Dihapus!');

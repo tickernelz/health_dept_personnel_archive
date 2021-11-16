@@ -19,7 +19,7 @@ class CreateMutasisTable extends Migration
             $table->string('nomor_induk');
             $table->string('pangkat')->nullable();
             $table->string('jabatan')->nullable();
-            $table->string('alasan')->nullable();
+            $table->text('alasan')->nullable();
             $table->date('tanggal_surat');
             $table->string('file')->nullable();
             $table->string('operator');

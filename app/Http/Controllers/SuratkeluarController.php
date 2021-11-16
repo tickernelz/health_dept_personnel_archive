@@ -153,8 +153,11 @@ class SuratkeluarController extends Controller
     public function destroy(int $id)
     {
         $data = Suratkeluar::firstWhere('id', $id);
-        // Hapus Berkas Lama
-        unlink(public_path('file/suratkeluar/').$data->file);
+        // Cek apakah ada berkas?
+        if ($data->file !== null) {
+            // Hapus Berkas Lama
+            unlink(public_path('file/suratkeluar/').$data->file);
+        }
         $data->delete();
 
         return redirect()->route('suratkeluar.index')->with('message', 'Data Berhasil Dihapus!');

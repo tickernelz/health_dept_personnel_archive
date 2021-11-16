@@ -168,8 +168,11 @@ class SuratmasukController extends Controller
     public function destroy(int $id)
     {
         $data = Suratmasuk::firstWhere('id', $id);
-        // Hapus Berkas Lama
-        unlink(public_path('file/suratmasuk/').$data->file);
+        // Cek apakah ada berkas?
+        if ($data->file !== null) {
+            // Hapus Berkas Lama
+            unlink(public_path('file/suratmasuk/').$data->file);
+        }
         $data->delete();
 
         return redirect()->route('suratmasuk.index')->with('message', 'Data Berhasil Dihapus!');
