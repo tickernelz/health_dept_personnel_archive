@@ -45,5 +45,8 @@ Route::middleware('auth')->group(function () {
         // Surat Menduduki Jabatan
         Route::resource('mendudukijabatan', MendudukijabatanController::class);
         Route::get('mendudukijabatan/file/hapus/{id}', 'MendudukijabatanController@hapus_file')->name('mendudukijabatan.hapus_file');
+        // Surat Mutasi
+        Route::resource('mutasi', MutasiController::class);
+        Route::get('mutasi/file/hapus/{id}', 'MutasiController@hapus_file')->name('mutasi.hapus_file');
     });
 });

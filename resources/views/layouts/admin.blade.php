@@ -132,6 +132,13 @@
                     <span>{{ __('Surat Menduduki Jabatan') }}</span>
                 </a>
             </li>
+            <!-- Arsip Surat Mutasi -->
+            <li class="nav-item {{ Nav::isResource('mutasi') }}">
+                <a class="nav-link" href="{{ route('mutasi.index') }}">
+                    <i class="fas fa-fw fa-exchange-alt"></i>
+                    <span>{{ __('Surat Mutasi') }}</span>
+                </a>
+            </li>
     @endcan
 
     <!-- Divider -->
