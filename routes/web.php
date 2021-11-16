@@ -51,5 +51,8 @@ Route::middleware('auth')->group(function () {
         // Surat Pengantar
         Route::resource('pengantar', PengantarController::class);
         Route::get('pengantar/file/hapus/{id}', 'PengantarController@hapus_file')->name('pengantar.hapus_file');
+        // Surat Perintah Tugas
+        Route::resource('perintahtugas', PerintahtugasController::class);
+        Route::get('perintahtugas/file/hapus/{id}', 'PerintahtugasController@hapus_file')->name('perintahtugas.hapus_file');
     });
 });

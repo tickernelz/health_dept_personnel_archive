@@ -146,6 +146,13 @@
                     <span>{{ __('Surat Pengantar') }}</span>
                 </a>
             </li>
+            <!-- Arsip Surat Perintah Tugas -->
+            <li class="nav-item {{ Nav::isResource('perintahtugas') }}">
+                <a class="nav-link" href="{{ route('perintahtugas.index') }}">
+                    <i class="fas fa-fw fa-tasks"></i>
+                    <span>{{ __('Surat Perintah Tugas') }}</span>
+                </a>
+            </li>
     @endcan
 
     <!-- Divider -->
