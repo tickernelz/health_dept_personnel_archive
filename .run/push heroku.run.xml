@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="push heroku" type="ShConfigurationType">
-    <option name="SCRIPT_TEXT" value="git push --force heroku heroku:master &amp;&amp; heroku run php artisan optimize:clear" />
+    <option name="SCRIPT_TEXT" value="git push --force heroku heroku:master ; heroku run php artisan optimize:clear" />
     <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
     <option name="SCRIPT_PATH" value="" />
     <option name="SCRIPT_OPTIONS" value="" />
