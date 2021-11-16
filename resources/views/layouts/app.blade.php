@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@stack('title') | JUDUL WEBSITE</title>
+    <title>@stack('title') | ARSIP SURAT DINKES PALANGKARAYA</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

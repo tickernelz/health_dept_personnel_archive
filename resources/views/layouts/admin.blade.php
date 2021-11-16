@@ -10,7 +10,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@stack('title') | JUDUL WEBSITE</title>
+    <title>@stack('title') | ARSIP SURAT DINKES PALANGKARAYA</title>
 
     <!-- Fonts -->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">

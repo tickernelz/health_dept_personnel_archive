@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@push('title', 'Profile')
+
 @section('main-content')
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">{{ __('Profile') }}</h1>
