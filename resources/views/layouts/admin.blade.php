@@ -105,7 +105,7 @@
                 </div>
             </li>
             <!-- Arsip Cuti -->
-            <li class="nav-item {{ Nav::isRoute('cutitahunan.index') }}">
+            <li class="nav-item {{ Nav::isResource('cutitahunan') }} {{ Nav::isResource('cutimelahirkan') }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#cuti"
                    aria-expanded="true" aria-controls="cuti">
                     <i class="fas fa-fw fa-calendar-alt"></i>
@@ -114,8 +114,11 @@
                 <div id="cuti" class="collapse" aria-labelledby="headingTwo" data-parent="#cuti">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- Arsip Cuti Tahunan -->
-                        <a class="collapse-item {{ Nav::isRoute('cutitahunan.index') }}"
+                        <a class="collapse-item {{ Nav::isResource('cutitahunan') }}"
                            href="{{ route('cutitahunan.index') }}">{{ __('Tahunan') }}</a>
+                        <!-- Arsip Cuti Tahunan -->
+                        <a class="collapse-item {{ Nav::isResource('cutimelahirkan') }}"
+                           href="{{ route('cutimelahirkan.index') }}">{{ __('Melahirkan') }}</a>
                     </div>
                 </div>
             </li>
