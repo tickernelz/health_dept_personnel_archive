@@ -139,6 +139,13 @@
                     <span>{{ __('Surat Mutasi') }}</span>
                 </a>
             </li>
+            <!-- Arsip Surat Pengantar -->
+            <li class="nav-item {{ Nav::isResource('pengantar') }}">
+                <a class="nav-link" href="{{ route('pengantar.index') }}">
+                    <i class="fas fa-fw fa-share-square"></i>
+                    <span>{{ __('Surat Pengantar') }}</span>
+                </a>
+            </li>
     @endcan
 
     <!-- Divider -->

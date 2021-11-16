@@ -48,5 +48,8 @@ Route::middleware('auth')->group(function () {
         // Surat Mutasi
         Route::resource('mutasi', MutasiController::class);
         Route::get('mutasi/file/hapus/{id}', 'MutasiController@hapus_file')->name('mutasi.hapus_file');
+        // Surat Pengantar
+        Route::resource('pengantar', PengantarController::class);
+        Route::get('pengantar/file/hapus/{id}', 'PengantarController@hapus_file')->name('pengantar.hapus_file');
     });
 });
