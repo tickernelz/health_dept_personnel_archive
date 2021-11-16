@@ -21,14 +21,16 @@
 		"spatie/laravel-permission": "^5.3.0"
     },
     "require-dev": {
-		"barryvdh/laravel-ide-helper": "^2.10",
-		"friendsofphp/php-cs-fixer": "^3.2.1",
-        "roave/security-advisories": "dev-latest",
+        "andyabih/laravel-to-uml": "^1.0",
+        "barryvdh/laravel-ide-helper": "^2.10",
         "facade/ignition": "^2.16.0",
+        "friendsofphp/php-cs-fixer": "^3.2.1",
         "fzaninotto/faker": "^1.5",
+        "kevincobain2000/laravel-erd": "^1.4",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10.0",
-        "phpunit/phpunit": "^9.5.10"
+        "phpunit/phpunit": "^9.5.10",
+        "roave/security-advisories": "dev-latest"
     },
     "autoload": {
         "psr-4": {
