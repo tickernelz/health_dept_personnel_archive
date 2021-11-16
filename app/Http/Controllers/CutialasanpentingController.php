@@ -13,7 +13,7 @@ class CutialasanpentingController extends Controller
         $data = Cutialasanpenting::get();
 
         return view('arsip.cuti.alasanpenting.list', [
-            'title' => 'List Cuti Alasanpenting',
+            'title' => 'List Cuti Alasan Penting',
             'data' => $data,
         ]);
     }
@@ -21,7 +21,7 @@ class CutialasanpentingController extends Controller
     public function create()
     {
         return view('arsip.cuti.alasanpenting.create', [
-            'title' => 'Tambah Cuti Alasanpenting',
+            'title' => 'Tambah Cuti Alasan Penting',
         ]);
     }
 
@@ -82,7 +82,7 @@ class CutialasanpentingController extends Controller
         $tanggal_selesai = Carbon::parse($data->tanggal_selesai)->format('d/m/Y');
 
         return view('arsip.cuti.alasanpenting.edit', [
-            'title' => 'Edit Cuti Alasanpenting',
+            'title' => 'Edit Cuti Alasan Penting',
             'data' => $data,
             'tanggal_surat' => $tanggal_surat,
             'tanggal_mulai' => $tanggal_mulai,
