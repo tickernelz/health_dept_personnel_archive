@@ -43,7 +43,7 @@
                                                 <input type="checkbox" class="custom-control-input" name="remember"
                                                        id="remember" {{ old('remember') ? 'checked' : '' }}>
                                                 <label class="custom-control-label"
-                                                       for="remember">{{ __('Remember Me') }}</label>
+                                                       for="remember">{{ __('Ingat saya') }}</label>
                                             </div>
                                         </div>
 
@@ -59,7 +59,7 @@
                                     @if (Route::has('password.request'))
                                         <div class="text-center">
                                             <a class="small" href="{{ route('password.request') }}">
-                                                {{ __('Forgot Password?') }}
+                                                {{ __('Lupa Password?') }}
                                             </a>
                                         </div>
                                     @endif

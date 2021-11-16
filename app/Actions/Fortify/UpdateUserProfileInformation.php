@@ -19,8 +19,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     public function update($user, array $input)
     {
         Validator::make($input, [
-            'nip' => ['nullable', 'numeric', 'max:255', Rule::unique('users')->ignore($user->id)],
-            'nama' => ['required', 'string', 'max:255'],
+            'nip' => ['nullable', 'numeric', Rule::unique('users')->ignore($user->id)],
+            'nama' => ['required', 'string'],
             'email' => [
                 'nullable',
                 'string',
@@ -28,8 +28,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'max:255',
                 Rule::unique('users')->ignore($user->id),
             ],
-            'hp' => ['nullable', 'numeric', 'max:255', Rule::unique('users')->ignore($user->id)],
-            'username' => ['required', 'string', 'max:255', Rule::unique('users')->ignore($user->id)],
+            'hp' => ['nullable', 'numeric', Rule::unique('users')->ignore($user->id)],
+            'username' => ['required', 'string', Rule::unique('users')->ignore($user->id)],
         ])->validateWithBag('updateProfileInformation');
 
         if ($input['email'] !== $user->email &&

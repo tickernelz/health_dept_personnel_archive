@@ -22,11 +22,11 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'nip' => 'nullable|numeric|max:255|unique:users,nip,'.Auth::user()->id,
-            'nama' => 'required|string|max:255',
-            'email' => 'nullable|email|max:255|unique:users,email,'.Auth::user()->id,
-            'hp' => 'nullable|numeric|max:255|unique:users,hp,'.Auth::user()->id,
-            'username' => 'required|string|max:255|unique:users,username,'.Auth::user()->id,
+            'nip' => 'nullable|numeric|unique:users,nip,'.Auth::user()->id,
+            'nama' => 'required|string',
+            'email' => 'nullable|email|unique:users,email,'.Auth::user()->id,
+            'hp' => 'nullable|numeric|unique:users,hp,'.Auth::user()->id,
+            'username' => 'required|string|unique:users,username,'.Auth::user()->id,
             'current_password' => 'nullable|required_with:new_password',
             'new_password' => 'nullable|min:8|max:12|required_with:current_password',
             'password_confirmation' => 'nullable|min:8|max:12|required_with:new_password|same:new_password',
