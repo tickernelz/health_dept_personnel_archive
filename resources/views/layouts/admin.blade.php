@@ -72,7 +72,7 @@
             </div>
 
             <!-- Kelola Pengguna -->
-            <li class="nav-item {{ Nav::isRoute('pengguna.index') }}">
+            <li class="nav-item {{ Nav::isResource('pengguna') }}">
                 <a class="nav-link" href="{{ route('pengguna.index') }}">
                     <i class="fas fa-fw fa-users"></i>
                     <span>{{ __('Pengguna') }}</span>
@@ -124,6 +124,13 @@
                            href="{{ route('cutialasanpenting.index') }}">{{ __('Alasan Penting') }}</a>
                     </div>
                 </div>
+            </li>
+            <!-- Arsip Surat Menduduki Jabatan -->
+            <li class="nav-item {{ Nav::isResource('mendudukijabatan') }}">
+                <a class="nav-link" href="{{ route('mendudukijabatan.index') }}">
+                    <i class="fas fa-fw fa-user-tie"></i>
+                    <span>{{ __('Surat Menduduki Jabatan') }}</span>
+                </a>
             </li>
     @endcan
 

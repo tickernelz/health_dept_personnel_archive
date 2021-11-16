@@ -42,5 +42,8 @@ Route::middleware('auth')->group(function () {
         // Surat Cuti Alasan Penting
         Route::resource('cutialasanpenting', CutialasanpentingController::class);
         Route::get('cutialasanpenting/file/hapus/{id}', 'CutialasanpentingController@hapus_file')->name('cutialasanpenting.hapus_file');
+        // Surat Menduduki Jabatan
+        Route::resource('mendudukijabatan', MendudukijabatanController::class);
+        Route::get('mendudukijabatan/file/hapus/{id}', 'MendudukijabatanController@hapus_file')->name('mendudukijabatan.hapus_file');
     });
 });
