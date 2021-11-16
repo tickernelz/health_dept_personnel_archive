@@ -39,5 +39,8 @@ Route::middleware('auth')->group(function () {
         // Surat Cuti Melahirkan
         Route::resource('cutimelahirkan', CutimelahirkanController::class);
         Route::get('cutimelahirkan/file/hapus/{id}', 'CutimelahirkanController@hapus_file')->name('cutimelahirkan.hapus_file');
+        // Surat Cuti Alasan Penting
+        Route::resource('cutialasanpenting', CutialasanpentingController::class);
+        Route::get('cutialasanpenting/file/hapus/{id}', 'CutialasanpentingController@hapus_file')->name('cutialasanpenting.hapus_file');
     });
 });

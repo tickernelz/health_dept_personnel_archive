@@ -105,7 +105,7 @@
                 </div>
             </li>
             <!-- Arsip Cuti -->
-            <li class="nav-item {{ Nav::isResource('cutitahunan') }} {{ Nav::isResource('cutimelahirkan') }}">
+            <li class="nav-item {{ Nav::isResource('cutitahunan') }} {{ Nav::isResource('cutimelahirkan') }} {{ Nav::isResource('cutialasanpenting') }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#cuti"
                    aria-expanded="true" aria-controls="cuti">
                     <i class="fas fa-fw fa-calendar-alt"></i>
@@ -119,6 +119,9 @@
                         <!-- Arsip Cuti Tahunan -->
                         <a class="collapse-item {{ Nav::isResource('cutimelahirkan') }}"
                            href="{{ route('cutimelahirkan.index') }}">{{ __('Melahirkan') }}</a>
+                        <!-- Arsip Cuti Alasan Penting -->
+                        <a class="collapse-item {{ Nav::isResource('cutialasanpenting') }}"
+                           href="{{ route('cutialasanpenting.index') }}">{{ __('Alasan Penting') }}</a>
                     </div>
                 </div>
             </li>
