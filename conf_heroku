@@ -1,0 +1,17 @@
+echo web: vendor/bin/heroku-php-apache2 public/ > Procfile
+git push heroku heroku:master
+heroku config:add APP_DEBUG=true
+heroku config:add APP_KEY=base64:IReWjPrmhf/006fy7W8/+0QaXSCkNTjkOR8M9Ewz3Pk=
+heroku config:add APP_NAME=kp-ijay
+heroku config:add APP_ENV=production
+heroku config:add APP_URL=https://kp-ijay.herokuapp.com
+heroku addons:create heroku-postgresql:hobby-dev
+heroku pg:credentials:url
+heroku config:add DB_CONNECTION=pgsql
+heroku config:add DB_HOST=ec2-3-230-149-158.compute-1.amazonaws.com
+heroku config:add DB_PORT=5432
+heroku config:add DB_DATABASE=dcrda3dnnec0f8
+heroku config:add DB_USERNAME=hiqndoyeufpjiy
+heroku config:add DB_PASSWORD=b13c983c7449435a9218b8ec18714d1c5dd61748e5cbd1379911ba405caee827
+heroku run php artisan migrate:fresh --seed
+heroku run php artisan storage:link
