@@ -7,8 +7,9 @@
     <h1 class="h3 mb-4 text-gray-800">{{ $title ?? __('Blank Page') }}</h1>
 
     <!-- Main Content goes here -->
-
-    <a href="{{ route('suratmasuk.create') }}" class="btn btn-primary mb-3">Tambah Surat Masuk</a>
+    @can('tambah surat')
+        <a href="{{ route('suratmasuk.create') }}" class="btn btn-primary mb-3">Tambah Surat Masuk</a>
+    @endcan
 
     @if (session('message'))
         <div class="alert alert-success">
@@ -59,11 +60,13 @@
                                            href="/file/suratmasuk/{{$li->file}}">
                                             Lihat
                                         </a>
-                                        <a type="button" class="btn btn-sm btn-secondary"
-                                           href="{{ route('suratmasuk.hapus_file', $li->id) }}"
-                                           onclick="return confirm('Yakin Mau Dihapus?');">
-                                            Hapus
-                                        </a>
+                                        @can('hapus surat')
+                                            <a type="button" class="btn btn-sm btn-secondary"
+                                               href="{{ route('suratmasuk.hapus_file', $li->id) }}"
+                                               onclick="return confirm('Yakin Mau Dihapus?');">
+                                                Hapus
+                                            </a>
+                                        @endcan
                                     </div>
                                 </div>
                             @else

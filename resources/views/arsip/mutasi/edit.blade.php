@@ -19,7 +19,7 @@
                     <input type="text" class="form-control @error('pengirim') is-invalid @enderror" name="pengirim"
                            id="pengirim"
                            placeholder="Masukkan Pengirim..." autocomplete="off"
-                           value="{{ old('pengirim') ?? $data->pengirim }}">
+                           value="{{ old('pengirim') ?? $data->pengirim }}" @hasrole('Admin') readonly @endhasrole>
                     @error('pengirim')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -30,7 +30,7 @@
                     <input type="text" class="form-control @error('nomor_induk') is-invalid @enderror"
                            name="nomor_induk" id="nomor_induk"
                            placeholder="Masukkan Nomor Induk..." autocomplete="off"
-                           value="{{ old('nomor_induk') ?? $data->nomor_induk}}">
+                           value="{{ old('nomor_induk') ?? $data->nomor_induk}}" @hasrole('Admin') readonly @endhasrole>
                     @error('nomor_induk')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -41,7 +41,7 @@
                     <input type="text" class="form-control @error('pangkat') is-invalid @enderror"
                            name="pangkat" id="pangkat"
                            placeholder="Masukkan Pangkat..." autocomplete="off"
-                           value="{{ old('pangkat') ?? $data->pangkat}}">
+                           value="{{ old('pangkat') ?? $data->pangkat}}" @hasrole('Admin') readonly @endhasrole>
                     @error('pangkat')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -52,7 +52,7 @@
                     <input type="text" class="form-control @error('jabatan') is-invalid @enderror"
                            name="jabatan" id="jabatan"
                            placeholder="Masukkan Jabatan..." autocomplete="off"
-                           value="{{ old('jabatan') ?? $data->jabatan}}">
+                           value="{{ old('jabatan') ?? $data->jabatan}}" @hasrole('Admin') readonly @endhasrole>
                     @error('jabatan')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -63,7 +63,7 @@
                     <textarea class="form-control @error('alasan') is-invalid @enderror"
                               name="alasan" id="alasan"
                               placeholder="Masukkan Alasan..."
-                              autocomplete="off">{{ old('alasan') ?? $data->alasan}}</textarea>
+                              autocomplete="off" @hasrole('Admin') readonly @endhasrole>{{ old('alasan') ?? $data->alasan}}</textarea>
                     @error('alasan')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -95,7 +95,7 @@
                         </div>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input @error('file') is-invalid @enderror" name="file"
-                                   id="file">
+                                   id="file" @hasrole('Admin') readonly @endhasrole>
                             <label class="custom-file-label" for="file">Pilih file</label>
                         </div>
                     </div>

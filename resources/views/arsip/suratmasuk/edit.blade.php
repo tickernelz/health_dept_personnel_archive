@@ -17,7 +17,7 @@
                 <div class="form-group">
                     <label for="kode">Kode Surat</label>
                     <input type="text" class="form-control @error('kode') is-invalid @enderror" name="kode" id="kode"
-                           placeholder="Masukkan Kode..." autocomplete="off" value="{{ old('kode') ?? $data->kode}}">
+                           placeholder="Masukkan Kode..." autocomplete="off" value="{{ old('kode') ?? $data->kode}}" @hasrole('Admin') readonly @endhasrole>
                     @error('kode')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -27,7 +27,7 @@
                     <label for="nomor_surat">Nomor Surat</label>
                     <input type="text" class="form-control @error('nomor_surat') is-invalid @enderror"
                            name="nomor_surat" id="nomor_surat"
-                           placeholder="Masukkan Nomor Surat..." autocomplete="off" value="{{ old('nomor_surat') ?? $data->nomor_surat}}">
+                           placeholder="Masukkan Nomor Surat..." autocomplete="off" value="{{ old('nomor_surat') ?? $data->nomor_surat}}" @hasrole('Admin') readonly @endhasrole>
                     @error('nomor_surat')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -75,7 +75,7 @@
                     <label for="pengirim">Pengirim</label>
                     <input type="text" class="form-control @error('pengirim') is-invalid @enderror" name="pengirim"
                            id="pengirim"
-                           placeholder="Masukkan Pengirim..." autocomplete="off" value="{{ old('pengirim') ?? $data->pengirim}}">
+                           placeholder="Masukkan Pengirim..." autocomplete="off" value="{{ old('pengirim') ?? $data->pengirim}}" @hasrole('Admin') readonly @endhasrole>
                     @error('pengirim')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -85,7 +85,7 @@
                     <label for="kepada">Kepada</label>
                     <input type="text" class="form-control @error('kepada') is-invalid @enderror" name="kepada"
                            id="kepada"
-                           placeholder="Masukkan Kepada..." autocomplete="off" value="{{ old('kepada') ?? $data->kepada}}">
+                           placeholder="Masukkan Kepada..." autocomplete="off" value="{{ old('kepada') ?? $data->kepada}}" @hasrole('Admin') readonly @endhasrole>
                     @error('kepada')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -94,7 +94,7 @@
                 <div class="form-group">
                     <label for="perihal">Perihal</label>
                     <textarea class="form-control @error('perihal') is-invalid @enderror" name="perihal" id="perihal"
-                              rows="3">{{ old('perihal') ?? $data->perihal}}</textarea>
+                              rows="3" @hasrole('Admin') readonly @endhasrole>{{ old('perihal') ?? $data->perihal}}</textarea>
                     @error('perihal')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -107,7 +107,7 @@
                         </div>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input @error('file') is-invalid @enderror" name="file"
-                                   id="file">
+                                   id="file" @hasrole('Admin') readonly @endhasrole>
                             <label class="custom-file-label" for="file">Pilih file</label>
                         </div>
                     </div>

@@ -7,8 +7,9 @@
     <h1 class="h3 mb-4 text-gray-800">{{ $title ?? __('Blank Page') }}</h1>
 
     <!-- Main Content goes here -->
-
-    <a href="{{ route('perintahtugas.create') }}" class="btn btn-primary mb-3">Tambah Surat Perintah Tugas</a>
+    @can('tambah surat')
+        <a href="{{ route('perintahtugas.create') }}" class="btn btn-primary mb-3">Tambah Surat Perintah Tugas</a>
+    @endcan
 
     @if (session('message'))
         <div class="alert alert-success">
@@ -81,7 +82,8 @@
                         <td>
                             <form action="{{ route('perintahtugas.destroy', $li->id) }}" method="post">
                                 <div class="btn-group btn-group-sm" role="group">
-                                    <a href="{{ route('perintahtugas.edit', $li->id) }}" class="btn btn-primary">Edit</a>
+                                    <a href="{{ route('perintahtugas.edit', $li->id) }}"
+                                       class="btn btn-primary">Edit</a>
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-danger"

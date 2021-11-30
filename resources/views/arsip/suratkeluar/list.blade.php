@@ -7,8 +7,9 @@
     <h1 class="h3 mb-4 text-gray-800">{{ $title ?? __('Blank Page') }}</h1>
 
     <!-- Main Content goes here -->
-
-    <a href="{{ route('suratkeluar.create') }}" class="btn btn-primary mb-3">Tambah Surat Keluar</a>
+    @can('tambah surat')
+        <a href="{{ route('suratkeluar.create') }}" class="btn btn-primary mb-3">Tambah Surat Keluar</a>
+    @endcan
 
     @if (session('message'))
         <div class="alert alert-success">
