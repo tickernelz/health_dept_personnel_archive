@@ -35,12 +35,26 @@ class HomeController extends Controller
         $users = User::count();
         $suratmasuk = Suratmasuk::count();
         $suratkeluar = Suratkeluar::count();
+        $cutialasanpenting = Cutialasanpenting::count();
+        $cutimelahirkan = Cutimelahirkan::count();
+        $cutitahunan = Cutitahunan::count();
+        $mendudukijabatan = Mendudukijabatan::count();
+        $mutasi = Mutasi::count();
+        $pengantar = Pengantar::count();
+        $perintahtugas = Perintahtugas::count();
         $totalsurat = (Suratmasuk::count() + Suratkeluar::count() + Cutialasanpenting::count() + Cutimelahirkan::count() + Cutitahunan::count() + Mendudukijabatan::count() + Mutasi::count() + Pengantar::count() + Perintahtugas::count());
 
         $widget = [
             'users' => $users,
             'suratmasuk' => $suratmasuk,
             'suratkeluar' => $suratkeluar,
+            'cutialasanpenting' => $cutialasanpenting,
+            'cutimelahirkan' => $cutimelahirkan,
+            'cutitahunan' => $cutitahunan,
+            'mendudukijabatan' => $mendudukijabatan,
+            'mutasi' => $mutasi,
+            'pengantar' => $pengantar,
+            'perintahtugas' => $perintahtugas,
             'totalsurat' => $totalsurat,
         ];
 
